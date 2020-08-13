@@ -26,7 +26,7 @@ WORKDIR /workspace/app
 VOLUME /tmp
 ENV APP_HOME=/workspace/app
 ARG DEPENDENCY=/workspace/app/build/dependency
-ENV MAIN_FULL_CLASS_NAME=com.oklimenko.payment.PaymentApplication
+ENV MAIN_FULL_CLASS_NAME=com.oklimenko.payment.PaymentSystemApplication
 #If the application Java dependencies don’t change, then the first layer (from BOOT-INF/lib) will not change
 #so the build will be faster
 COPY ./target/*.jar ${APP_HOME}
@@ -36,4 +36,4 @@ COPY ./target/*.jar ${APP_HOME}
 # 1) just remember!!! use sh -c if any of variables to be processed!
 # 2) ${0} for the "command" (in this case the first program argument) and ${@} for the "command arguments" (the rest of the program arguments).
 #ENTRYPOINT ["sh","-c","exec java ${JAVA_OPTS} -cp app:app/lib/* ${MAIN_FULL_CLASS_NAME} ${0} ${@}"]
-ENTRYPOINT ["sh","-c","exec java -jar payment.jar ${0} ${@}"]
+ENTRYPOINT ["sh","-c","exec java -jar payment-system.jar ${0} ${@}"]

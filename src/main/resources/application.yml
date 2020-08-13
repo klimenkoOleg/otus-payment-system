@@ -67,3 +67,17 @@ security:
     resource:
       jwt:
         key-value: 123
+kafka:
+  server: myapp-kafka:9092
+  groupId: paymentSystemGroupId
+  producer:
+    id: paymentSystemProducer
+    topic: processing-system-event
+  topic: payment2
+
+
+#Metrics related configurations
+management.endpoint.metrics.enabled: true
+management.endpoints.web.exposure.include: "*"
+management.endpoint.prometheus.enabled: true
+management.metrics.export.prometheus.enabled: true

@@ -7,13 +7,14 @@ import lombok.experimental.Accessors;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
 @Data
 public class NewPaymentSystemDto {
-    private long paymentId;
+    private UUID paymentId;
     private long clientId;
     private long serviceId;
     private BigDecimal amount;
